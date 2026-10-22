@@ -1,0 +1,6 @@
+Step 1 : npm iniy -y
+Step 2 : Install the TypeScript by "npm i typescript"
+Step 3 : create file with .ts
+Step 4 : integrated the terminal 
+Step 5 : run the command tsc example.ts
+Step 6 : run the final command node example.ts
