@@ -30,10 +30,10 @@
 
 // Q4 Map,filter and reduce 
 
-// let numbers = [2,5,8,10,15,20]
+let numbers = [2,5,8,10,15,20]
 // let square = numbers.map(numbers=> numbers*numbers)
 
-// let greater = numbers.filter(numbers=>numbers>=20)
+let greater = numbers.filter(numbers=>numbers>=20)
 
 // let sum = numbers.reduce((total,numbers)=> total+numbers)
 

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Name :
+    <input type="text" name="" id="name" ><br /><br>
+    Email :
+    <input type="text" name="" id="email" > <br /><br>
+    Query :
+    <input type="text" id="query"><br> <br>
+    Password :
+    <input type="text" id="pass" > <br> <br>
+    <button id="b1">Submit</button>
+    
+    <script>
+      const b1 = document.getElementById("b1");
+      b1.addEventListener("click", () => {
+        const name = document.getElementById("name").value;
+        const nameReg = /^[A-Za-z\s]+$/;
+
+        const email = document.getElementById("email").value;
+        const emailReg = /^[^@\s]+@[^\s@]+\.[^\s@]+$/;
+
+        const query = document.getElementById("query").value
+      
+        const password = document.getElementById("pass").value
+        const passReg = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[\d])[A-Za-z\d]{8,}$/;
+        if (!nameReg.test(name)) {
+          alert("Enter valid Name");
+        } 
+        else if (!emailReg.test(email)) {
+            alert("Email not valid")
+        }
+        else if(!passReg.test(pass)){
+          alert("Password is invalid")
+        }
+        else if(!query.length<10){
+          alert("Query lenght should be more than 10")
+        }
+        else {
+          alert("Ok..");
+        }
+        const data = [
+          name,
+          email,
+          query,
+          pass
+        ]
+        localStorage.setItem("data",JSON.stringify(data))
+      });
+
+    </script>
+  </body>
+</html>

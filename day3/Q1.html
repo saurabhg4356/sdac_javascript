@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="il"> <br><button id="b1" type="submit">Submit</button>
+    <ul id="ul">
+        <li>Python</li>
+        <li>Html</li>
+        <li>JAVA</li>
+    </ul>    
+
+    <script>
+        const b1 = document.getElementById("b1")
+        b1.addEventListener("click",()=>{
+            const ul = document.getElementById("ul")
+            const il = document.getElementById("il").value
+            const li = document.createElement("li")
+
+            console.log(il);
+
+            li.textContent = il
+
+            ul.append(li)
+
+            localStorage.setItem("li",il)
+            
+
+        })
+    </script>
+</body>
+</html>

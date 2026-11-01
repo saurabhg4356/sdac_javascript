@@ -1,0 +1,9 @@
+ install 
+ 
+ 1. open the integrated terminal 
+ 2. type " npm i typescript -y"
+ 
+ Run
+ 
+ 1. in terminal type "tsc fileName.ts"
+ 2. node fileName.js

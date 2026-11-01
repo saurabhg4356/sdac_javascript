@@ -156,3 +156,30 @@ const foundMember = searchItem(members, member => member.memberID === 102);
 
 console.log("Book found:", foundBook);
 console.log("Member found:", foundMember);
+
+type searchCon<T> =  (item : T) => boolean;
+function serach<T>(items : T[], condition : searchCon<T>): T| undefined{
+    return items.find(condition)
+}
+
+type bookR= {
+    title:string
+    author:string
+}
+type memberR = {
+    membern:string
+    membert:string
+}
+const B : bookR[] = [
+    {title:"saurabh", author:"saurabh"},
+    {title:"shoeb", author:"shoeb"}
+
+]
+const M : memberR[] = [
+    {membern:"saurabh", membert:"Gold"},
+    {membern:"saurabh", membert:"Platinum"}
+]
+const findB = serach(B,b => b.title === "saurabh")
+console.log(findB);
+
+

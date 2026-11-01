@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Name :
+    <input type="text" id="name"> <br> <br>
+    Email:
+    <input type="text" id="email"> <br> <br>
+    Password:
+    <input type="text" id="pass"> <br> <br>
+    <button type="submit" id="b1">Submit</button>
+    <Script>
+        const b1 = document.getElementById("b1");
+        b1.addEventListener("click",()=>{
+            const name = document.getElementById("name").value
+            const nameReg = /^[A-Za-z]+$/;
+            const email = document.getElementById("email").value
+            const emailReg = /^[^\s@]+@[^@\s]+\.[a-z]+$/;
+
+
+            const pass = document.getElementById("pass").value
+            const passReg = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[\d])[A-Za-z\d]{8,}$/;
+
+            if(!nameReg.test(name)){
+                alert("invalid name");
+            }
+            else if(!emailReg.test(email)){
+                alert("invalid email");
+            }
+            else if(!passReg.test(pass)){
+                alert("invalid password");
+            }
+            else{
+                alert("OK")
+            }
+            const data = [
+                name,
+                email
+            ]
+            localStorage.setItem("data",JSON.stringify(data))
+        })
+
+    </Script>
+</body>
+</html>

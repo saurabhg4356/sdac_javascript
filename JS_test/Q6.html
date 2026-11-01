@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Name :
+    <input type="text" id="name"> <br> <br>
+    Price:
+    <input type="text" id="price"> <br> <br>
+    Quantity:
+    <input type="text" id="quantity"> <br> <br>
+    <button type="submit" id="b1">Submit</button>
+    <Script>
+        const b1 = document.getElementById("b1");
+        b1.addEventListener("click",()=>{
+            const name = document.getElementById("name").value
+            const nameReg = /^[A-Za-z]+$/;
+            const price = document.getElementById("price").value
+            const priceReg = /^[\d]+$/;
+
+
+            const quantity = document.getElementById("quantity").value
+            const quantityReg = /^[\d]+$/;
+
+            if(!nameReg.test(name)){
+                alert("invalid name");
+            }
+            else if(!priceReg.test(price)){
+                alert("invalid number");
+            }
+            else if(!price<0){
+                alert("invalid number");
+            }
+            else if(!price<0){
+               alert("invalid number") ; 
+            }
+            else if(!quantityReg.test(quantity)){
+                alert("invalid number");
+            }
+            else{
+                alert("OK")
+            }
+            const data = [
+                name,
+                price,
+                quantity
+            ]
+            localStorage.setItem("data",JSON.stringify(data))
+        })
+
+    </Script>
+</body>
+</html>
